@@ -34,7 +34,7 @@ The seed script creates these development-only accounts:
 
 Change or remove these accounts before using the application with real school data.
 
-The API listens on port 5000 by default. Vite serves the frontend on its development port and proxies /api requests to the API.
+The API listens on port 5001 by default. Vite serves the frontend on its development port and proxies /api requests to the API.
 
 ## Production
 
