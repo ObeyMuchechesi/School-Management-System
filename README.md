@@ -38,4 +38,8 @@ The API listens on port 5001 by default. Vite serves the frontend on its develop
 
 ## Production
 
-Set environment variables through the hosting provider's secret manager. Do not deploy a development .env file or use the seed accounts in production. Build the frontend with npm run build from frontend, then serve the generated frontend/dist directory through a static host or reverse proxy.
+For a single Vercel deployment, set the Vercel project's Root Directory to the repository root. The included `vercel.json` builds the frontend and serves the Express API through a serverless function. Add `MONGO_URI` (the Atlas connection string for the `school_management` database) and a long random `JWT_SECRET` in Vercel's Environment Variables, then redeploy. Do not upload a local `.env` file.
+
+The frontend and API share the same origin, so the frontend's `/api` requests are handled by the Vercel function. For a separate API host, configure a same-origin rewrite or update the frontend API base URL to that API's address.
+
+Do not use the seed accounts with real school data. Change or remove them before production use.
